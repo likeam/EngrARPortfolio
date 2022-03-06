@@ -29,7 +29,7 @@ gsap.from(".stripe2 img", 2, {
     delay: 5
 })
 
-// RESPONSIVE
+// RESPONSIVE ffffff
 
 
 
