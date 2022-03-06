@@ -1,0 +1,359 @@
+*{
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+    background-color: #38444B;
+    font-family: 'Space Grotesk', sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Messapia';
+}
+.wrapper{
+    display: flex;
+    height: 100vh;
+    overflow-y: hidden;
+}
+.text{
+    width: 50%;
+    height: 100vh;
+    padding: 15px 15px 15px 100px;
+}
+.text h1{
+    font-size: 70px;
+    line-height: 84px;
+    font-weight: normal;
+    color: #ffe63e;
+    text-transform: uppercase;
+}
+.text p{
+    font-size: 20px;
+    color: #fbf7db;
+    text-transform: uppercase;
+    margin-top: 15px;
+    letter-spacing: 4px;
+}
+.text .btn{
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    border: 1px solid #ffe63e;
+    color: #ffe63e;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-top: 80px;
+    overflow: hidden;
+    transition: all ease 0.5s;
+
+}
+.text .btn:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #ffe63e;
+    z-index: -1;
+    transition: all ease 0.5s;
+}
+.text .btn:hover{
+    font-weight: 700;
+    color: #38444b;
+}
+.text .btn:hover::before{
+    left: 0;
+}
+.social{
+    bottom: 100px;
+    margin-top: 200px;
+    position: absolute;
+    
+}
+.social a{
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fbf7db;
+    margin-right: 10px;
+    border: 1px solid #53636d;
+    border-radius: 50%;
+    transition: all ease 0.5s;
+}
+.social a:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffe63e;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0);
+    transition: all ease 0.5s;
+}
+.social a:hover{
+    color: #38444b;
+}
+.social a:hover::before{
+    transform: scale(1);
+}
+.img{
+    width: 50%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.img img{
+    width: 100%;
+    margin: 15px;
+}
+.img .img-stripe{
+    width: calc(50%-15px);
+}
+.img .stripe1{
+    animation: stripe-one 60s ease 0s infinite;
+}
+@keyframes stripe-one {
+    50%{
+        transform: translateY(-200%);
+    }
+}
+.img .stripe2{
+    transform: translateY(-200%);
+    animation: stripe-two 60s ease 0s infinite;
+}
+@keyframes stripe-two {
+    50%{
+        transform: translateY(0%);
+    }
+}
+.toggleBtn{
+    display: inline-block;
+    width: 100px;
+    height: 90px;
+    padding: 22px 25px;
+    background-color: #ffe63e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-bottom-right-radius:100px ;
+    cursor: pointer;
+}
+.toggleBtn img{
+    position: absolute;
+}
+.toggleBtn img.close-icon{
+    opacity: 0;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 0 100% 0;
+    background-color: #ffe63e;
+    z-index: 9;
+    transform: scale(0);
+    transform-origin: top left;
+}
+nav{
+    padding: 100px;
+    transition: all ease 0.5s;
+}
+nav ul{
+    padding-left: 0;
+
+}
+nav ul li{
+    list-style: none;
+    margin-bottom: 30;
+}
+nav ul li a{
+    position: relative;
+    font-family: Messapia;
+    font-size: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #38444b;
+}
+nav ul li a:before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 0;
+    height: 3px;
+    background-color: #38444b;
+    transition: all ease 0.5s;
+
+}
+nav ul li a:hover:before{
+    width: 100%;
+    left: 0;
+}
+
+@media only screen and (max-width: 1024px){
+     .wrapper{
+         display: flex;
+         height: auto;
+         overflow: auto;
+         flex-wrap: wrap;
+     }   
+     .text{
+         width: 100%;
+         height: auto;
+         padding: 100px 15px 40px;
+     }
+     .img{
+         width: 100%;
+         flex-wrap: wrap;
+     }
+     .img .img-stripe{
+         width: 100%;
+         animation: none !important;
+         display: flex;
+         max-width: 100%;
+         overflow: auto;
+         transform: translateY(0) !important;
+     }
+     .social{
+         margin-top: 50px;
+         position: relative;
+         bottom: 0;
+     }
+     .text .btn{
+         width: 200px;
+         height: 50px;
+         line-height: 50px;
+         margin-top: 60px;
+     }
+     .menu{
+         width: 80%;
+     }
+}
+
+@media only screen and (max-width: 575px) {
+    .menu{
+        width: 100%;
+        height: 80%;
+    }
+    nav ul li a{
+        font-size: 25px;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .text h1{
+        font-size: 42px;
+        line-height: 54px;
+    }
+    .text p{
+        font-size: 18px;
+        line-height: 28px;
+    }
+    nav{
+        padding:  100px 30px;
+    }
+}
+
+
+@media only screen and (max-width: 375px) {
+    .menu{
+      height: 60%;
+    }
+    nav ul li a{
+        margin-bottom: 15px;
+    }
+
+}
+
+
+
+.splash {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 0%;
+    z-index: -20;
+  }
+  
+  .intro-social {
+    margin-top: 4rem;
+    a {
+      margin-right: 5rem;
+    }
+  }
+  
+  .active {
+    background: $gray-text;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+  }
+  
+  .intro-text,
+  .intro-images {
+    flex: 1 1 40rem;
+  }
+  
+  #plant-left {
+    animation: plant 1.5s ease infinite alternate;
+  }
+  #plant-right {
+    animation: plant 1.5s ease infinite alternate 0.5s;
+  }
+  
+  #me {
+    animation: me 1s ease infinite alternate;
+    transform-origin: bottom;
+  }
+  #clock-arrow {
+    animation: clock 1.5s infinite linear;
+    transform-box: fill-box;
+    transform-origin: bottom;
+  }
+  
+  @keyframes me {
+    from {
+      transform: rotateZ(-5deg);
+    }
+    to {
+      transform: rotateZ(5deg);
+    }
+  }
+  
+  @keyframes plant {
+    from {
+      transform: translateY(0%);
+    }
+    to {
+      transform: translateY(-30%);
+    }
+  }
+  @keyframes clock {
+    from {
+      transform: rotateZ(0deg);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+
+ 
+
+  
+  
